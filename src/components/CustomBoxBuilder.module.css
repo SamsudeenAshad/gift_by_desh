@@ -1,0 +1,135 @@
+.builder {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.itemsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.itemCard {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid transparent;
+}
+
+.itemCard:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+.itemImage {
+    height: 150px;
+    background: var(--accent);
+    opacity: 0.5;
+}
+
+.itemInfo {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemInfo h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.addBtn {
+    background: var(--secondary);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.stickySummary {
+    position: sticky;
+    top: 100px;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.boxContents {
+    min-height: 200px;
+    margin-bottom: 1.5rem;
+    border: 2px dashed var(--accent);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.emptyMsg {
+    text-align: center;
+    color: #999;
+    margin-top: 3rem;
+}
+
+.itemList {
+    list-style: none;
+}
+
+.selectedItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.removeBtn {
+    background: none;
+    color: #999;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.removeBtn:hover {
+    color: red;
+}
+
+.summaryFooter {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.summaryFooter button {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .builder {
+        grid-template-columns: 1fr;
+    }
+
+    .stickySummary {
+        position: static;
+    }
+}
