@@ -1,10 +1,13 @@
 .navbar {
-    padding: 1.5rem 0;
-    background: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .container {
@@ -15,7 +18,7 @@
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -23,30 +26,48 @@
 
 .links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .link {
     font-weight: 500;
     color: var(--text);
     transition: color 0.2s;
+    position: relative;
 }
 
 .link:hover {
     color: var(--primary);
 }
 
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
 .cartBtn {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
+    background: var(--text);
+    color: var(--white);
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
     font-weight: 600;
-    transition: all 0.2s;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .cartBtn:hover {
+    transform: scale(1.05);
     background: var(--primary);
-    color: var(--white);
 }
