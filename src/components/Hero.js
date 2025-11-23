@@ -4,8 +4,12 @@ import styles from './Hero.module.css';
 export default function Hero() {
     return (
         <section className={styles.hero}>
+            <div className={styles.blob1}></div>
+            <div className={styles.blob2}></div>
+
             <div className={`container ${styles.container}`}>
                 <div className={styles.content}>
+                    <span className={styles.badge}>New Collection Available</span>
                     <h1 className={styles.title}>
                         Curated Gifts for <br />
                         <span className={styles.highlight}>Every Occasion</span>
@@ -24,8 +28,12 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className={styles.imageWrapper}>
-                    {/* Placeholder for hero image - in real app would be an Image component */}
-                    <div className={styles.placeholderImage}></div>
+                    <div className={styles.card}>
+                        <div className={styles.placeholderImage}></div>
+                        <div className={styles.floatCard}>
+                            <span>🎁 Best Seller</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
