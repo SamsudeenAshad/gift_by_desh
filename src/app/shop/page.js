@@ -1,28 +1,45 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import ProductCard from '@/components/ProductCard';
 import styles from './page.module.css';
 
-// Mock data - in real app would come from API/DB
-const products = [
-    { id: 1, name: "Birthday Bliss Box", price: 45.00, isNew: true },
-    { id: 2, name: "Self Care Sunday", price: 55.00, isNew: false },
-    { id: 3, name: "Coffee Lover's Set", price: 38.00, isNew: false },
-    { id: 4, name: "Sweet Treats Pack", price: 32.00, isNew: false },
-    { id: 5, name: "Luxury Spa Kit", price: 85.00, isNew: true },
-    { id: 6, name: "Gentleman's Choice", price: 60.00, isNew: false },
-];
-
 export default function Shop() {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchProducts() {
+            try {
+                const res = await fetch('/api/products');
+                const data = await res.json();
+                if (data.success) {
+                    setProducts(data.data);
+                }
+            } catch (error) {
+                console.error('Failed to fetch products:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchProducts();
+    }, []);
+
     return (
         <main>
             <Navbar />
             <div className="container section">
                 <h1 className="title">Shop All Gifts</h1>
-                <div className={styles.grid}>
-                    {products.map(product => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </div>
+                {loading ? (
+                    <p style={{ textAlign: 'center', marginTop: '2rem' }}>Loading products...</p>
+                ) : (
+                    <div className={styles.grid}>
+                        {products.map(product => (
+                            <ProductCard key={product._id} product={{ ...product, id: product._id }} />
+                        ))}
+                    </div>
+                )}
             </div>
         </main>
     );
