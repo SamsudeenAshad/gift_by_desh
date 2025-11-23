@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import TikTokEmbed from "@/components/TikTokEmbed";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -24,12 +25,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TikTok Section Placeholder */}
+      {/* TikTok Section */}
       <section className="section" style={{ background: 'var(--white)' }}>
         <div className="container">
           <h2 className="title" style={{ textAlign: 'center' }}>Latest from TikTok</h2>
           <p style={{ textAlign: 'center', marginBottom: '2rem' }}>Follow us @gifts_by_deesh</p>
-          {/* TikTok Component will go here */}
+          <TikTokEmbed />
         </div>
       </section>
     </main>
