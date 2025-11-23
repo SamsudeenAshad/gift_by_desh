@@ -1,0 +1,42 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.videoPlaceholder {
+    aspect-ratio: 9/16;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.playIcon {
+    font-size: 3rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.info {
+    padding: 1rem;
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.4;
+}
