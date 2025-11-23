@@ -1,0 +1,52 @@
+.navbar {
+    padding: 1.5rem 0;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--primary);
+}
+
+.cartBtn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.cartBtn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
