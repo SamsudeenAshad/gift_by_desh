@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import CustomBoxBuilder from '@/components/CustomBoxBuilder';
+import GiftBoxBuilder from '@/components/GiftBoxBuilder';
 
 export default function BuildABox() {
     return (
@@ -11,7 +11,7 @@ export default function BuildABox() {
                     Create a truly unique gift by selecting items to fill your box.
                     We'll package it with care and include a handwritten note.
                 </p>
-                <CustomBoxBuilder />
+                <GiftBoxBuilder />
             </div>
         </main>
     );
